@@ -1,0 +1,86 @@
+{% extends 'FutureApp/base.html' %}
+{% load static %}
+{% block content %}
+
+
+ <style>
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .section-container {
+            padding: 1rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .article-card {
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .article-image {
+            height: 250px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .article-title {
+            margin-bottom: 10px;
+           font-weight: bold;
+        }
+        .article-text {
+            line-height: 1.6;
+        }
+        .news-section {
+            padding: 4rem 0;
+        }
+        .update-title {
+            text-align: left;
+            margin-bottom: 4rem;
+            margin-top: 4rem;
+        }
+    </style>
+
+
+</head>
+    <body>
+     <section class="news-section">
+        <div class="container">
+            <h1 class="section-title">News And Updates</h1>
+            
+            <div class="row g-4"> 
+                {% for post in posts %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="article-card card">
+                    {% if post.cover_image %}
+                    <img src="{{ post.cover_image.url }}" class="article-image card-img-top" alt="{{ post.title }}">
+                    {% else %}
+                    <img src="{% static 'images/default.jpg' %}" class="article-image card-img-top" alt="Default Image">
+                    {% endif %}
+                        <div class="card-body">
+                        <h2 class="article-title">{{ post.title }}</h2>
+                        <p class="article-text">
+                        {{ post.content|truncatewords:30 }}...
+                         <a href="{% url 'news_detail' post.slug %}" style="color: black;font-size: small; font-weight: bold;" >Read more...</a>
+                        </p>
+                   
+                 </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+        </div>
+    </section>
+<!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+
+{% endblock %}
+    </body>
+</html>

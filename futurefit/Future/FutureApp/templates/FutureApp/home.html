@@ -1,0 +1,470 @@
+{% extends 'FutureApp/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+<style>
+
+
+    :root {
+            --primary-color: #B1ECA0;
+            --secondary-color: #18660E;
+    }
+
+     body {
+        overflow-x: hidden;
+    }
+
+     .green-text {
+    color: #28a745;
+    }
+
+    .hero-section .btn {
+            margin: 10px 5px;
+        }
+    .hero-section {
+            background-color: #FBFFF9;
+             padding: 30px 15px;
+        }
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+
+        .carousel-item img {
+        width: 100%;
+        height: 800px;
+        object-fit: cover;
+    }
+
+    
+    
+
+     .btn-outline-custom {
+            color: #0A4A3C;
+            border-color: #0A4A3C;
+            border-radius: 10px;
+            padding: 8px 10px;
+        }
+        
+        .btn-custom {
+            background-color: #B1ECA0;
+            color: #0A4A3C;
+            border-radius: 10px;
+            padding: 8px 10px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-custom:hover {
+            background-color: #0A4A3C;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+      
+
+
+ .why-section {
+        background-color: #FBFFF9;
+        padding: 2rem 0;
+        text-align: left;
+    }
+    
+    .why-section .green-text {
+        color: #238F4C;
+        font-weight: bold;
+    }
+    
+    .why-section img {
+        border-radius: 8px;
+        object-fit: cover;
+        width: 100%;
+        height: 200px;
+        margin-bottom: 10px;
+    }
+    
+    .image-scroll-container {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 15px 0;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .image-scroll-container img {
+        display: inline-block;
+        width: 280px;
+        height: 180px;
+        margin-right: 10px;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+       .testimonials-section {
+        padding: 50px 0;
+        background-color: #B1ECA0;
+    }
+    .testimonials-section h2 {
+        font-size: 18px;
+        font-weight: lighter;
+        text-align: center;
+    }
+    .testimonials-section h3 {
+       color: #063003;
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .testimonial-card {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+    }
+    .testimonial-card img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: 15px auto;
+        display: block;
+    }
+    .testimonial-card p {
+        margin: 0;
+    }
+
+    /* Hover effect */
+    .testimonial-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+     .newsletter-section {
+        padding: 30px 0;
+        text-align: center;
+    }
+    .newsletter-section h2 {
+        
+        font-weight: bold;
+    }
+
+    .newsletter-section .input-group {
+        margin: 0 auto;
+    }
+    .newsletter-section .form-control {
+        border-radius: 20px 0 0 20px;
+        border: 1px solid #ccc;
+        background-color: transparent;
+        padding: 10px 15px;
+    }
+    .newsletter-section .form-control::placeholder {
+        color: #ccc;
+    }
+    .newsletter-section .subscribe-btn {
+        border-radius: 0 20px 20px 0;
+        background-color: #1a3c34;
+        color: #fff;
+        border: 1px solid #0A4A3C;
+        padding: 10px 20px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .newsletter-section .subscribe-btn:hover {
+        background-color: #2e5b50;
+        transform: scale(1.05);
+    }
+    .newsletter-section .alert-success {
+        color: #28a745;
+    }
+    .newsletter-section .alert-danger {
+        color: #dc3545;
+    }
+
+   
+
+    /* Mobile Responsiveness */
+    
+      @media (min-width: 768px) {
+        .hero-section h1 {
+            font-size: 2.5rem;
+        }
+        
+        .hero-section {
+            text-align: left;
+        }
+        
+        .right-text {
+            text-align: left;
+        }
+        
+        .why-section {
+            text-align: left;
+        }
+        
+        .testimonials-section h2 {
+            font-size: 18px;
+        }
+        
+        .testimonials-section h3 {
+            font-size: 24px;
+        }
+        
+        
+       
+    }
+    
+
+</style>
+<body>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+    <br>
+    <div class="row align-items-center">
+        <!-- Text Column -->
+        <div class="col-md-6">
+            <h1>Empowering next deep tech<span class="green-text fw-bold"> innovators </span></h1>
+        </div>
+
+        <!-- Image Column -->
+        <div class="col-md-6 text-center mb-4">
+            <img src="{% static 'images/future12.png' %}" alt="logo" class="img-fluid me-3" style="width:200px; height: auto; margin-right: 15px;">
+        </div>
+    </div>
+</div>
+                <div class="row mt-5">
+                    <div class="col-lg-6">
+                       <div class="d-flex flex-wrap">
+                        <a href="{% url 'our_service' %}" class="btn btn-custom">Emerging Technology Apprenticeship</a>
+                    <a href="{% url 'our_service' %}" class="btn btn-custom">Energy Solutions Research</a>
+                    <a href="{% url 'our_service' %}" class="btn btn-custom">Electronic Component Store</a>
+                    <a href="{% url 'our_service' %}" class="btn btn-custom">Study Tech and Innovation Abroad</a>
+                    </div>
+                     </div>
+                <div class="col-md-6">
+                    <p class="right-text">
+                        FutureFit Innovation Lab is your gateway to a thriving tech career globally, investing in deep technology apprenticeship programs crucial to developing a workforce equipped with advanced skills in AI, Embedded Systems, and Software Development. Embedded Systems, Software Development.
+                    <br><a href="{% url 'our_service' %}" class="btn learn-more-btn">Learn more</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+                   
+    </section>
+
+ <!-- Image Section with Carousel -->
+<section class="w-100 py-3">
+    <div class="container">
+        <div id="main-carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner text-center">
+                <div class="carousel-item active">
+                    <img src="{% static 'images/future7.jpg' %}" alt="Students in tech lab 1" class="img-fluid rounded mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/future23.jpg' %}" alt="Future Image" class="img-fluid rounded mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/future10.jpg' %}" alt="Students in tech lab 3" class="img-fluid rounded mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/future25.jpg' %}" alt="Students in tech lab 4" class="img-fluid rounded mx-auto d-block">
+                </div>
+            </div>
+            <!-- Added indicators for better mobile UX -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#main-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#main-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#main-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#main-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Why FutureFit Section -->
+<section class="why-section py-4" style="background-color: #FBFFF9;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-3">
+                <div class="mb-3 text-center text-md-start">
+                    <h2 class="mb-0">why <span class="green-text fw-bold">FutureFit</span></h2>
+                </div>
+                <p class="mb-3">
+                    As AI continues to reshape industries and displace traditional jobs globally, investing in deep technology apprenticeship programs is crucial to developing a workforce equipped with advanced skills in AI, Embedded Systems, and Software Development ensuring that the next generation can lead and innovate in this evolving tech landscape.
+                </p>
+                <div class="text-center text-md-start">
+                    <a href="{% url 'our_service' %}" class="btn learn-more-btn">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</section>
+
+
+ <!-- Testimonials Section -->
+   <section class="testimonials-section">
+    <div class="container">
+        <h2>What people are saying about us</h2>
+        <h3 class="text-center mb-3">TESTIMONIALS</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <p class="text-center">"I had a transformative experience at FutureFit Innovation Lab! The hands-on projects, combined with expert mentorship, helped me grow both technically and professionally, and developed skills that have prepared me for future opportunities."</p>
+                    <img src="{% static 'images/future12.jpg' %}" alt="img"> 
+                    <p class="text-center mt-2">Joshua Bako</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <p class="text-center py-3">"My apprenticeship at FutureFit Innovation Lab was invaluable hands-on experience with the ESP32 microcontroller and dedicated mentorship strengthened my IoT applications. I highly recommend the program to anyone passionate about technology and innovation!"</p>
+                    <img src="{% static 'images/future11.jpg' %}" alt="img">
+                    <p class="text-center mt-2">Arema Akinwale</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <p class="text-center">"My apprenticeship at FutureFit Innovation Lab was an incredible experience. The hands-on projects in embedded systems and IoT mentorship and real-world projects strengthened my technical abilities and has prepared me for future opportunities."</p>
+                    <img src="{% static 'images/future13.jpg' %}" alt="img">
+                    <p class="text-center mt-2">Ayomide Ugbe</p>
+                </div>
+            </div>
+        </div>
+    </div>
+   </section>
+
+
+<!-- Newsletter Section -->
+ 
+    <section class="newsletter-section">
+        <div class="container">
+            <p1 style="text-align: center  ">Our Newsletter</p1>
+            <h1>Join our Newsletter for all Innovational Insights</h1>
+        <form id="newsletter-form" method="post" action="{% url 'newsletter_subscribe' %}" class="d-flex justify-content-center align-items-center">
+            {% csrf_token %}
+            <div class="input-group" style="max-width: 1000px;">
+                <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required>
+                <button type="submit" class="btn subscribe-btn">Subscribe</button>
+            </div>
+        </form>
+                {% if success %}
+                    <p>Thank you for subscribing!</p>
+                {% elif error %}
+                    <p>{{ error }}</p>
+                {% endif %}
+    </div>
+
+
+     <!-- Horizontal scrollable images instead of flex -->
+<section class="store-section mt-5 " style="background-color: #FBFFF9;">
+    <div class="container">
+         <h2 >Our Store</h2>
+            <p style="text-align: center;">Vist our store and get your choice Component </p>
+    </div>
+
+
+        <div class="image-scroll-container mb-3 ">
+            <img src="{% static 'images/future27.jpg' %}" alt="Tech Image 1" class="rounded">
+            <img src="{% static 'images/future21.jpg' %}" alt="Tech Image 2" class="rounded">
+            <img src="{% static 'images/future22.jpg' %}" alt="Tech Image 2" class="rounded">
+            <img src="{% static 'images/future20.jpg' %}" alt="Tech Image 2" class="rounded">
+            <img src="{% static 'images/future37.jpg' %}" alt="Tech Image 2" class="rounded">
+        </div>
+    </div>
+</section>
+
+
+  
+
+
+
+
+
+ <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+ <!-- Custom JavaScript -->
+    <script>
+        // Initialize the carousel when the document is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the carousel element
+            const mainCarousel = document.getElementById('main-carousel');
+            
+            // Initialize Bootstrap carousel
+            const carousel = new bootstrap.Carousel(mainCarousel, {
+                interval: 5000,  // 5 seconds between slides
+                pause: false,    // Don't pause on hover
+                wrap: true,      // Loop back to first slide after last
+                keyboard: false  // Don't respond to keyboard events
+            });
+            
+            // Optional: Add custom fade transition effect
+            const carouselItems = document.querySelectorAll('#main-carousel .carousel-item');
+            carouselItems.forEach(item => {
+                item.style.transition = 'transform 1.2s ease, opacity 1.2s ease-out';
+            });
+        });
+    </script>
+
+    <script>
+    // Add hover effect using JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.testimonial-card');
+        cards.forEach(card => {
+            card.addEventListener('mouseover', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
+            });
+            card.addEventListener('mouseout', function() {
+                this.style.transform = 'scale(1)';
+                this.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            });
+        });
+    });
+</script>
+
+<script>
+  document.getElementById("newsletter-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const email = document.getElementById("email").value;
+    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+    const messageBox = document.getElementById("newsletter-message");
+
+    fetch(form.action, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "X-CSRFToken": csrfToken,
+      },
+      body: new URLSearchParams({ email: email }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      messageBox.classList.remove("d-none", "alert-danger", "alert-success");
+
+      if (data.success) {
+        messageBox.classList.add("alert-success");
+        messageBox.textContent = data.message;
+        form.reset();
+      } else {
+        messageBox.classList.add("alert-danger");
+        messageBox.textContent = data.message;
+      }
+    })
+    .catch(error => {
+      messageBox.classList.remove("d-none");
+      messageBox.classList.add("alert-danger");
+      messageBox.textContent = "Something went wrong. Please try again.";
+    });
+  });
+</script>
+
+</body>
+</html>
+
+
+{% endblock %}

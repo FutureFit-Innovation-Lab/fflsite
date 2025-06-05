@@ -1,0 +1,319 @@
+{% extends 'FutureApp/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-success" role="alert">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       
+    }
+    
+    .contact-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+    
+    .main-heading {
+        color: #27531f;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    .subtitle {
+        text-align: center;
+        margin-bottom: 3rem;
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .contact-sections {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .contact-info {
+        flex: 1;
+        padding-right: 2rem;
+        min-width: 300px;
+    }
+    
+    .contact-form {
+        flex: 1;
+        background-color: #f8f9fa;
+        padding: 2rem;
+        border-radius: 8px;
+        min-width: 350px;
+    }
+    
+    .section-heading {
+        color: #000000;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+    }
+    
+    .contact-category {
+        margin-bottom: 1.5rem;
+    }
+    
+    .contact-category h4 {
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+    }
+    
+    .contact-category p {
+        margin-bottom: 0.8rem;
+        color: #555;
+    }
+    
+    .contact-method {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        color: #5fab48;
+        font-weight: 500;
+    }
+    
+    .contact-method i {
+        margin-right: 1rem;
+        font-size: 1.2rem;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #e6f0ff;
+        border-radius: 50%;
+    }
+    
+    .form-label {
+        font-weight: 500;
+        color: #555;
+    }
+    
+    .form-control {
+        border: 1px solid #ddd;
+        padding: 0.8rem;
+        margin-bottom: 1rem;
+        border-radius: 4px;
+    }
+    
+    .form-control:focus {
+        border-color: #0066cc;
+        box-shadow: 0 0 0 0.2rem rgba(0, 102, 204, 0.25);
+    }
+    
+    .submit-btn {
+        background-color: #18660E;
+        color: white;
+        border: none;
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+        font-weight: 500;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        transition: background-color 0.3s;
+    }
+    
+    .submit-btn:hover {
+        background-color: #92ff81;
+    }
+    
+    .social-section {
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #ddd;
+    }
+    
+    .social-heading {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 1rem;
+    }
+    .contact-method {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.contact-method .icon {
+    color: #686f69;
+}
+  
+    
+    
+@media (max-width: 768px) {
+
+    .navbar-nav {
+            text-align: left;
+            padding: 0.5rem 0;
+            }
+    
+            .nav-item {
+            margin: 8px 0;
+            }
+            .footer-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .newsletter-section {
+                width: 100%;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+            }
+    
+    
+}
+
+</style>
+
+    <div class="contact-container">
+        <h1 class="main-heading">CONTACT US</h1>
+        <p class="subtitle">We'd love to hear from you! Whether you have questions, feedback, or need assistance, we're here to help.</p>
+        
+        <div class="contact-sections">
+            <div class="contact-info">
+                <h2 class="section-heading">How Can We Help You?</h2>
+                
+                <div class="contact-category">
+                    <h4>General Inquiries</h4>
+                    <p>If you have any questions about our products or services, feel free to reach out to us.</p>
+                </div>
+                
+                <div class="contact-category">
+                    <h4>Support</h4>
+                    <p>Need help with an issue? Our support team is ready to assist you</p>
+                </div>
+                
+                <div class="contact-category">
+                    <h4>Partnerships & Collaborations</h4>
+                    <p>Interested in working together? Let us know about your business opportunity.</p>
+                </div>
+                
+                <div class="contact-category">
+                    <h4>Feedback</h4>
+                    <p>We value your input! Share your thoughts and suggestions to help us improve.</p>
+                </div>
+                
+                <div class="mt-6">
+                    <div class="contact-method">
+                    <!-- 📧 Email Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4H4C2.897 4 2 4.897 2 6v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zM4 6h16l-8 5L4 6zm0 12V8l8 5 8-5v10H4z"/>
+                        </svg>
+                        <div>
+                        <span>Email:</span>
+                        <p>info@futurefitlab.org</p>
+                        </div>
+                    </div>
+    
+                   <div class="contact-method">
+                        <!-- 📍 Address/Phone Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.78 19.78 0 0 1 2 4.18 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.72 12.35 12.35 0 0 0 .56 2.57 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.51-1.51a2 2 0 0 1 2.11-.45 12.35 12.35 0 0 0 2.57.56A2 2 0 0 1 22 16.92z"/>
+                         </svg>
+                        <div>
+                            <span>phone number:</span><p>+2348030619124</p>
+                             
+                        </div>
+                    </div>
+                </div>
+                    
+                   
+                
+            </div>
+            
+            <div class="contact-form">
+                <h3 class="text-center mb-4">Send a message</h3>
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger">
+                            <ul>
+                                {% for error in form.non_field_errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+      
+
+                    {% endif %}
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="{{ form.first_name.name }}" placeholder="First Name" value="{{ form.first_name.value|default:'' }}" required>
+                        {% if form.first_name.errors %}
+                            <div class="invalid-feedback" style="display: block; color: #dc3545;">
+                                {{ form.first_name.errors|join:", " }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="{{ form.last_name.name }}" placeholder="Last Name" value="{{ form.last_name.value|default:'' }}" required>
+                        {% if form.last_name.errors %}
+                            <div class="invalid-feedback" style="display: block; color: #dc3545;">
+                                {{ form.last_name.errors|join:", " }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" name="{{ form.email.name }}" placeholder="Email Address" value="{{ form.email.value|default:'' }}" required>
+                        {% if form.email.errors %}
+                            <div class="invalid-feedback" style="display: block; color: #dc3545;">
+                                {{ form.email.errors|join:", " }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" name="{{ form.message.name }}" rows="5" placeholder="Your Message" required>{{ form.message.value|default:'' }}</textarea>
+                        {% if form.message.errors %}
+                            <div class="invalid-feedback" style="display: block; color: #dc3545;">
+                                {{ form.message.errors|join:", " }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+        
+       
+        </div>
+    </div>
+</html>
+
+<script>
+ // New script to fade out alerts
+    document.addEventListener('DOMContentLoaded', function() {
+            const alerts = document.querySelectorAll('.alert');
+            alerts.forEach(function(alert) {
+                setTimeout(function() {
+                    alert.style.transition = 'opacity 0.5s ease';
+                    alert.style.opacity = '0';
+                    setTimeout(function() {
+                        alert.remove(); // Remove from DOM after fading
+                    }, 500); // Match transition duration
+                }, 3000); // Delay before starting fade (3 seconds)
+            });
+        });
+</script>
+<!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    
+{% endblock %}

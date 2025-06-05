@@ -1,0 +1,427 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutureFit lab</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+         :root {
+            --primary-color: #B1ECA0;
+            --secondary-color: #18660E;
+        }
+         body {
+            background-color:#FBFFF9 ;
+            color: black;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+         }
+
+          p {
+            color: #0d0f11; 
+            font-size: 16px; }
+
+            h1{
+            color: #020202;
+            font-weight: bold;
+            font-size: 30px;
+            }
+
+            h2{
+                color: #000000;
+                font-size: 18px;
+                font-weight: bold;
+            
+            }
+
+            h3{
+                color: #000000;
+                font-size: 20px;
+            }
+
+            h4 {
+                color: #ffffff;
+                font-size: 14px;
+                font-weight: medium;
+               
+            }
+    
+         
+
+         .contact-btn {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid #18660E;
+    border-radius: 20px;
+    color: #18660E;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    margin-right: 10px;
+}
+
+.contact-btn:hover {
+    background-color: #18660E;
+    color: white;
+    border-color: #18660E; /* Optional: change border color to match */
+}
+
+
+      .learn-more-btn {
+            border: 1px solid #18660E;
+            color: #18660E;
+            background-color: transparent;
+            border-radius: 8px;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .learn-more-btn:hover {
+            background-color: #18660E;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+         .apply-btn {
+            background: linear-gradient(135deg, #18660E 0%, #1c3d03 100%);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .apply-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.6);
+            color: white;
+        }
+        
+        
+        .nav-link {
+            color: #238F4C;
+            font-weight: 500;
+        }
+
+         footer {
+            background-color: #155F00;
+            color: #fff;
+            padding: 30px 0;
+            
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .footer-logo img {
+            width: 20px;
+            height: 25px;
+            margin-right: 10px;
+        }
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .footer-contact h4 {
+            margin: 5px 0;
+        }
+        .footer-links h5, .footer-services h5 {
+            font-weight: medium;
+            margin-bottom: 15px;
+            font-size: 12px;
+        }
+        .footer-links ul, .footer-services ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links ul li, .footer-services ul li {
+            margin-bottom: 10px;
+        }
+        .newsletter-section h5 {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+        .newsletter-section .input-group {
+            max-width: 300px;
+        }
+        .newsletter-section .form-control {
+            border-radius: 20px 0 0 20px;
+            border: 1px solid #fff;
+            background-color: transparent;
+            color: #fff;
+        }
+        .newsletter-section .form-control::placeholder {
+            color: #ccc;
+        }
+        .newsletter-section .btn {
+            border-radius: 0 20px 20px 0;
+            background-color: #343a40;
+            color: #fff;
+            border: 1px solid #fff;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .newsletter-section .btn:hover {
+            background-color: #074e03;
+            transform: scale(1.05);
+        }
+        .footer-separator {
+            border-top: 1px solid #fff;
+            margin: 20px 0;
+        }
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        .social-icons svg {
+            width: 24px;
+            height: 24px;
+            margin-left: 10px;
+            fill: #fff;
+        }
+        .social-icons svg:hover {
+            fill: #79f986;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .footer-logo {
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+            .footer-contact, .footer-links, .footer-services, .newsletter-section {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            .newsletter-section .input-group {
+                margin: 0 auto;
+            }
+            .social-icons {
+                text-align: center;
+                margin-top: 10px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+     </style>
+</head>
+    <body>
+    <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm custom-navbar py-3">
+            <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="/home/">
+                <img src="{% static 'images/logo.png' %}" alt="logo" class="me-2" width="20px" height="25px">
+                <span class="fs-5 fw-semibold text-success">FutureFit</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="{% url 'about_us' %}">About Us</a>
+                    </li>
+                   <li class="nav-item dropdown d-flex align-items-center">
+    <!-- Main link to the "Our Service" page -->
+    <a class="nav-link" href="{% url 'our_service' %}">
+        Our Service
+    </a>
+    
+    <!-- Dropdown toggle -->
+    <a class="nav-link dropdown-toggle ps-1" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
+
+    <!-- Dropdown menu -->
+    <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+        <li><a class="dropdown-item" href="{% url 'programs' %}">programs</a></li>
+        <li><a class="dropdown-item" href="{% url 'study_abroad' %}">Study Abroad</a></li>
+        <li><a class="dropdown-item" href="{% url 'energy_solution_view' %}">Energy Solutions</a></li>
+       
+    </ul>
+</li>
+
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="{% url 'store' %}">Store</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="{% url 'news_update' %}">News and Updates</a>
+                    </li>
+                </ul>
+                <a href="{% url 'contact' %}" class="btn contact-btn">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+    {% block content %}
+
+    {% endblock %}
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Contact Info -->
+                <div class="col-md-3">
+                    <div class="footer-logo">
+                        <img src="{% static 'images/logo.png' %}" alt="FutureFit Logo">
+                        <span style="color: #238F4C; font-weight: semi bold;">FutureFit</span>
+                    </div>
+                    <div class="footer-contact mt-5">
+                        <h4>No. 35 Justice Sowemimo Str., Asokoro, Abuja FCT.</h4>
+                        <h4>+234 (0) 803 0619 124</h4>
+                        <h4><a href="mailto:info@futurefitlab.org">info@futurefitlab.org</a></h4>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div class="col-md-2">
+                    <div class="footer-links">
+                        <h5>QUICK LINK</h5>
+                        <ul>
+                            <li><a href="{% url 'about_us' %}">About Us</a></li>
+                            <li><a href="{% url 'our_service' %}">Our Service</a></li>
+                            <li><a href="{% url 'store' %}">Store</a></li>
+                            <li><a href="{% url 'news_update' %}">News and Updates</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Services -->
+                <div class="col-md-2">
+                    <div class="footer-services">
+                        <h5>SERVICES</h5>
+                        <ul>
+                            <li><a href="{% url 'programs' %}">Programs</a></li>
+                            <li><a href="{% url 'study_abroad' %}">Study Abroad</a></li>
+                            <li><a href="{% url 'energy_solution_view' %}">Energy Solution</a></li>
+                            
+                            
+                        </ul>
+                    </div>
+                </div>
+                <!-- Newsletter -->
+                <div class="col-md-5">
+                    <div class="newsletter-section">
+                        <h5>Subscribe to our NEWSLETTER</h5>
+                        <form id="newsletter-form" method="post" action="{% url 'newsletter_subscribe' %}" class="d-flex justify-content-center align-items-center">
+                         {% csrf_token %}
+                    <div class="input-group" style="max-width: 500px;">
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required>
+                        <button type="submit" class="btn subscribe-btn">Subscribe</button>
+                     </div>
+                        </form>
+                        {% if success %}
+                         <p>Thank you for subscribing!</p>
+                         {% elif error %}
+                    <p>{{ error }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="footer-separator"></div>
+            <div class="row">
+                <div class="col-12 footer-bottom">
+                    <p>© 2024 by FutureFit Lab</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Aorganization%3A103228732&keywords=futurefit%20innovation%20lab&origin=RICH_QUERY_SUGGESTION&position=0&searchId=3aa40628-8a49-4ef4-89f0-ad67733a12ff&sid=O_3&spellCorrectionEnabled=false" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-1.337-.025-3.05-1.865-3.05-1.866 0-2.15 1.454-2.15 2.957v5.697h-3v-11h2.879v1.513h.041c.401-.762 1.381-1.865 2.841-1.865 3.038 0 3.6 2.007 3.6 4.617v6.735z"/>
+                            </svg>
+                        </a>
+                        
+                       
+                        <a href="https://www.facebook.com/profile.php?id=61564960852332" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385h-3.046v-3.469h3.046v-2.646c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.234 2.686.234v2.953h-1.512c-1.489 0-1.954.925-1.954 1.874v2.254h3.328l-.532 3.469h-2.796v8.385c5.737-.9 10.125-5.864 10.125-11.854z"/>
+                            </svg>
+                        </a>
+
+                        <!-- Instagram SVG Icon -->
+                        <a href="https://www.instagram.com/futurefitlab/?igsh=MXQwanZqbG5rY2YwcQ%3D%3D#" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.206.057 2.003.248 2.466.415a4.92 4.92 0 011.675 1.086 4.92 4.92 0 011.086 1.675c.167.463.358 1.26.415 2.466.058 1.266.07 1.645.07 4.849s-.012 3.584-.07 4.85c-.057 1.206-.248 2.003-.415 2.466a4.92 4.92 0 01-1.086 1.675 4.92 4.92 0 01-1.675 1.086c-.463.167-1.26.358-2.466.415-1.266.058-1.645.07-4.85.07s-3.584-.012-4.849-.07c-1.206-.057-2.003-.248-2.466-.415a4.902 4.902 0 01-2.761-2.761c-.167-.463-.358-1.26-.415-2.466C2.175 15.747 2.163 15.368 2.163 12s.012-3.584.07-4.849c.057-1.206.248-2.003.415-2.466a4.902 4.902 0 012.761-2.761c.463-.167 1.26-.358 2.466-.415C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.736 0 8.332.013 7.052.07 5.75.128 4.737.333 3.93.615a7.072 7.072 0 00-2.55 1.64A7.072 7.072 0 00.615 4.93C.333 5.737.128 6.75.07 8.052.013 9.332 0 9.736 0 12c0 2.264.013 2.668.07 3.948.058 1.302.263 2.315.545 3.122a7.08 7.08 0 001.64 2.55 7.08 7.08 0 002.55 1.64c.807.282 1.82.487 3.122.545C9.332 23.987 9.736 24 12 24s2.668-.013 3.948-.07c1.302-.058 2.315-.263 3.122-.545a7.08 7.08 0 002.55-1.64 7.08 7.08 0 001.64-2.55c.282-.807.487-1.82.545-3.122.057-1.28.07-1.684.07-3.948s-.013-2.668-.07-3.948c-.058-1.302-.263-2.315-.545-3.122a7.072 7.072 0 00-1.64-2.55A7.072 7.072 0 0020.07.615c-.807-.282-1.82-.487-3.122-.545C15.747.013 15.368 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/>
+                            </svg>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+        <!-- This is your footer -->
+     <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+     <script>
+        document.querySelector('.newsletter-section .btn').addEventListener('click', function() {
+            const email = document.querySelector('.newsletter-section .form-control').value;
+            if (email) {
+                alert('Thank you for subscribing!');
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
+    </script>
+
+    <script>
+  document.getElementById("newsletter-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const email = document.getElementById("email").value;
+    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+    const messageBox = document.getElementById("newsletter-message");
+
+    fetch(form.action, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "X-CSRFToken": csrfToken,
+      },
+      body: new URLSearchParams({ email: email }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      messageBox.classList.remove("d-none", "alert-danger", "alert-success");
+
+      if (data.success) {
+        messageBox.classList.add("alert-success");
+        messageBox.textContent = data.message;
+        form.reset();
+      } else {
+        messageBox.classList.add("alert-danger");
+        messageBox.textContent = data.message;
+      }
+    })
+    .catch(error => {
+      messageBox.classList.remove("d-none");
+      messageBox.classList.add("alert-danger");
+      messageBox.textContent = "Something went wrong. Please try again.";
+    });
+  });
+</script>
+</body>
+</html>
+
+
+

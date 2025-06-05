@@ -1,0 +1,59 @@
+{% extends 'FutureApp/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<h1>{{ item.name }}</h1>
+<img src="{{ item.image.url }}" alt="{{ item.name }}" style="max-width:400px;" id="item-image">
+<p>{{ item.description }}</p>
+<p><strong>Price: $<span id="item-price">{{ item.price }}</span></strong></p>
+
+<form id="add-to-cart-form">
+    {% csrf_token %}
+    <label for="quantity">Quantity:</label>
+    <input type="number" name="quantity" id="quantity" value="1" min="1">
+    <button type="submit">Add to Cart</button>
+</form>
+
+<!-- Modal -->
+<div id="cart-modal" style="display:none; position:fixed; top:30%; left:30%; background:#fff; border:1px solid #ccc; padding:20px; z-index:1000;">
+    <h2>Item added to cart</h2>
+    <img id="modal-image" src="" style="max-width:150px;">
+    <p>Price: $<span id="modal-price"></span></p>
+    <p>Quantity: <span id="modal-quantity"></span></p>
+    <button onclick="document.getElementById('cart-modal').style.display='none';">Close</button>
+</div>
+
+
+
+
+<script>
+document.getElementById('add-to-cart-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const quantity = document.getElementById('quantity').value;
+    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+    fetch("{% url 'add_to_cart' item.id %}", {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': csrfToken,
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+            'quantity': quantity
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Populate modal
+        document.getElementById('modal-image').src = document.getElementById('item-image').src;
+        document.getElementById('modal-price').textContent = data.price;
+        document.getElementById('modal-quantity').textContent = data.quantity;
+        document.getElementById('cart-modal').style.display = 'block';
+    });
+});
+</script>
+<!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+{% endblock %}

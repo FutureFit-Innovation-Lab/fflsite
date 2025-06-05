@@ -1,0 +1,275 @@
+{% extends 'FutureApp/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+    <style>        
+        .content-section {
+            padding: 60px 0;
+        }
+        
+        .main-title {
+            
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 2rem;
+            
+        }
+        
+        .hero-image-placeholder {
+            
+            border: 2px dashed #dee2e6;
+            border-radius: 15px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px 0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+           
+            opacity: 0.3;
+            color: #6c757d;
+        }
+        
+        
+        .description-text {
+            
+            
+            margin-bottom: 2rem;
+        }
+        
+        .outcomes-section {
+            background: linear-gradient(145deg, #B1ECA0, #e9ecef 100%);
+            border-radius: 20px;
+            padding: 50px;
+            margin-top: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .outcomes-title {
+            
+            color: #111417;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .outcome-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .outcome-item {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            border-left: 5px solid #18660E;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+          
+        }
+        
+        .outcome-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .outcome-item::before {
+            content: '✓';
+            background: #18660E;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .apply-btn {
+            background: linear-gradient(135deg, #18660E 0%, #1c3d03 100%);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .apply-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.6);
+            color: white;
+        }
+        
+        .duration-badge {
+            background: linear-gradient(135deg, #9dfc7e 0%, #51a24b 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            display: inline-block;
+            margin-top: 1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.2rem;
+                text-align: center;
+            }
+            
+            .hero-image-placeholder {
+                height: 200px;
+                margin: 20px 0;
+            }
+            
+            .placeholder-text {
+                font-size: 1rem;
+            }
+            
+            .outcomes-section {
+                padding: 30px 20px;
+                margin-top: 30px;
+            }
+            
+            .outcomes-title {
+                font-size: 2rem;
+            }
+            
+            .outcome-item {
+                padding: 15px;
+                font-size: 1rem;
+            }
+            
+            .outcome-item:hover {
+                transform: translateX(5px);
+            }
+            
+            .content-section {
+                padding: 40px 0;
+            }
+            
+            .description-text {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .main-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-image-placeholder {
+                height: 180px;
+            }
+            
+            .outcomes-section {
+                padding: 20px 15px;
+            }
+            
+            .outcomes-title {
+                font-size: 1.8rem;
+            }
+            
+            .apply-btn {
+                padding: 12px 30px;
+                font-size: 1.1rem;
+                width: 100%;
+            }
+        }
+    </style>
+    <body>
+         <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="hero-content">
+                        <h1 class="hero-title mt-4 text-center">Python and Django enabled web application<br>for content management</h1>
+                        <div class="duration-badge">2-Month Intensive Program</div>
+                    </div>
+               <!-- Hero Image Placeholder -->
+                        <div class="hero-image-placeholder">
+                            
+                             <img src="{% static 'images/future32.jpg' %}" alt="FutureFit Innovation Lab" class="about-image img-fluid">
+                    
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h2 class=" text-center mb-4 ">A full Content Management Enabled web application using Python and Django</h2>
+                    
+                    <p class="description-text">
+                        In this program, you'll learn how to create, manage, and publish dynamic content with a user-friendly interface. 
+                        We'll cover key concepts, from setting up your development environment to implementing advanced features, all 
+                        while leveraging the powerful capabilities of Django.
+                        Join us for a two months intensive Django and Python apprenticeship program
+                    </p>
+                    
+                   
+                </div>
+            </div>
+            
+            <!-- Expected Outcomes Section -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="outcomes-section">
+                        <h3 class="outcomes-title">Expected Outcomes</h3>
+                        <p class="text-center text-muted mb-4">By the end of this 2-month curriculum, apprentices will:</p>
+                        
+                        <ul class="outcome-list">
+                            <li class="outcome-item">
+                                Become proficient with git version control and collaborate with GitHub
+                            </li>
+                            <li class="outcome-item">
+                                Write clean, efficient Python code with strong OOP, control flows, and error handling for web applications
+                            </li>
+                            <li class="outcome-item">
+                                Integrate database and user management and Authentication using advanced Django CMS system
+                            </li>
+                            <li class="outcome-item">
+                                Deploy Django application using CI/CD
+                            </li>
+                        </ul>
+                        
+                        <div class="text-center mt-4">
+                            <button class="btn apply-btn">Apply</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+
+    </body>
+</html>
+{% endblock %}

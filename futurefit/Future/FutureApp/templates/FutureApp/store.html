@@ -1,0 +1,28 @@
+{% extends 'FutureApp/base.html' %}
+{% load static %}
+{% block content %}
+<div>
+  {% for item in items %}
+    <div style="margin-bottom: 20px;">
+      {% if item.slug %}
+        <h2>
+          <a href="{% url 'store_detail' item.slug %}">{{ item.name }}</a>
+        </h2>
+      {% else %}
+        <h2>{{ item.name }}</h2>
+      {% endif %}
+      
+      {% if item.image %}
+        <img src="{{ item.image.url }}" alt="{{ item.name }}" style="max-width:200px;">
+      {% else %}
+        <img src="{% static 'images/default.jpg' %}" alt="Default Image" style="max-width:200px;">
+      {% endif %}
+      
+      <p>{{ item.description|truncatewords:20 }}</p>
+      <p><strong>${{ item.price }}</strong></p>
+    </div>
+  {% endfor %}
+</div>
+<!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+{% endblock %}

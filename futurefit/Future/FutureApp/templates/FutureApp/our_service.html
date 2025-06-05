@@ -1,0 +1,135 @@
+{% extends 'FutureApp/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+    <style>
+         /* css for the main content */
+           .section-color  {
+            background-color: #b6e892;
+            padding: 2rem 1rem;
+            margin: 0;
+            text-align: center;
+            
+        }
+          .section-container {
+          padding: 2rem 1rem;
+          text-align: center;
+          margin: 0;
+          }
+
+          .section-title {
+          text-align: center;
+          margin-bottom: 3rem;
+          }
+
+         
+
+     
+          .service-section {
+           margin-bottom: 4rem;
+          }
+          .service-img {
+           width: 100%;
+           max-width: fit-content;
+           max-height: 300px;
+           height: auto;
+          border-radius: 10px;
+          }
+       
+         
+          @media (max-width: 768px) {
+            .navbar-nav {
+            text-align: left;
+            padding: 0.5rem 0;
+            }
+    
+            .nav-item {
+            margin: 8px 0;
+            }
+            .footer-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .newsletter-section {
+                width: 100%;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+
+         
+
+        }
+    </style>
+    <body>
+        <main>
+       <section class="section-color  " >
+        
+
+
+            <div class="row service-section align-items-center flex-md-row-reverse">
+              <div class="col-md-6 mt-4">
+                <img src="{% static 'images/future10.jpg' %}" alt="Policy Advocacy" class="service-img">
+              </div>
+              <div class="col-md-6 text-md-start text-center mt-4 mt-md-0">
+                <h2 class=>Emerging Technology Apprenticeship</h2>
+                <p>Our Emerging Technologies apprenticeship program equips participants with hands-on expertise in AI, Embedded Systems, Software Development, and 3D Design & Printing, ensuring they gain the practical skills demanded by top industries worldwide. Through real world projects and mentorship, we prepare our trainees to enter the global tech landscape job-ready and capable of driving innovation from day one. Read more about the programs by clicking the button below.</p>
+                <a href="/programs/" class="btn contact-btn mt-2">program</a>
+              </div>
+            </div>
+       </section>
+
+
+        <section class="section-container  " >
+            <div class="row service-section align-items-center ">
+              <div class="col-md-6 mt-4">
+                <img src="{% static 'images/future35.jpg' %}" alt="Standardization" class="service-img">
+              </div>
+              <div class="col-md-6 text-md-start text-center mt-4 mt-md-0">
+                <h2 class=>Study Tech and Innovation Abroad</h2>
+                <p>FutureFit Innovation Lab goes beyond skill-building by helping prospective students from Nigeria prepare for graduate studies globally. We offer comprehensive support from application guidance and crafting compelling statements of purpose to structuring CVs in EU format and preparing students for tech-related part-time jobs ensuring they’re well-equipped for both academic and career success abroad. Learn more about this service</p> 
+                <a href="/study-abroad/" class="btn contact-btn mt-2">Get in Touch</a>
+              </div>
+            </div>
+        </section>
+
+        <section class="section-color  " >
+            <div class="row service-section align-items-center flex-md-row-reverse">
+              <div class="col-md-6">
+                <img src="{% static 'images/future36.jpg' %}" alt="Integration" class="service-img" style="margin-top: 25px;">
+              </div>
+              <div class="col-md-6 text-md-start text-center mt-4 mt-md-0">
+                <h2 class="text-blue">Study Tech and Innovation Abroad</h2>
+                <p class="mb-3">FutureFit Innovation Lab goes beyond skill-building by helping prospective students from Nigeria prepare for graduate studies globally. We offer comprehensive support from application guidance and crafting compelling statements of purpose to structuring CVs in EU format and preparing students for tech-related part-time jobs ensuring they're well-equipped for both academic and career success abroad. Learn more about this service</p> 
+                <a href="/store/" class="btn contact-btn mt-2">store</a>
+              </div>
+            </div>
+            
+        </section>
+
+        <section class="section-container  " >
+              <div class="row service-section align-items-center mt-5 ">
+                <div class="col-md-6">
+                   <video width="100%" height="200" controls autoplay loop muted>
+                        <source src="{% static 'video/future19.mp4' %}" type="video/mp4">
+                    </video>
+                 </div>
+                <div class="col-md-6 text-md-start text-center mt-4 mt-md-0">
+                  <h2 class=>Energy Solutions Research</h2>
+                  <p>FutureFit Innovation Lab conducts cutting-edge research in Wind Turbines, Solar Panels, and Energy Monitoring, dedicated to addressing energy poverty and fostering climate resilience. Our research initiatives aim to develop sustainable energy solutions that empower communities, reduce dependence on non-renewable resources, and support a more climate-resilient future. Through our expertise in emerging energy technologies, we provide insights, prototypes, and innovative approaches tailored to meet the unique energy needs of underserved regions</p> 
+                  <a href="/contact" class="btn contact-btn mt-2">contact us</a>
+                </div>
+              </div>
+           </div>
+           </section>
+
+            <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
+
+{% endblock %}

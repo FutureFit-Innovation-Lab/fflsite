@@ -1,0 +1,194 @@
+{% extends 'FutureApp/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+    <style>
+        .course-section {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .course-content {
+            padding: 2.5rem;
+        }
+
+        .course-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #212529;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .course-description {
+            font-size: 1rem;
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .course-image {
+            margin-top: 5px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+
+        }
+
+        .course-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+         .container-custom {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .container-custom {
+                padding: 1rem 0.75rem;
+            }
+
+            .course-content {
+                padding: 1.5rem;
+            }
+
+            .course-title {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .course-description {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .course-image {
+                min-height: 150px;
+            }
+
+            .btn-get-in-touch {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .course-section {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .course-content {
+                padding: 1.25rem;
+            }
+
+            .course-title {
+                font-size: 1.3rem;
+            }
+
+            .course-description {
+                font-size: 0.9rem;
+            }
+        }
+
+    </style>
+    <body>
+         <div class="container-custom">
+        <!-- AI and ML Course Section -->
+        <div class="course-section">
+            <div class="row g-0">
+                <div class="col-lg-7 col-md-6">
+                    <div class="course-content h-100 d-flex flex-column justify-content-center">
+                        <h2 class="course-title">Artificial Intelligence (AI) and Machine Learning (ML) Essentials</h2>
+                        <p class="course-description">Gain a comprehensive understanding of developing, deploying, and integrating machine learning models into user applications. This curriculum covers the entire life circle from data preparation to deployment and integration.</p>
+                        <div>
+                            <a href="/ai/" class="btn learn-more-btn">learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6 mb-3">
+                    <div class="course-image h-100">
+                        <img src="{% static 'images/future8.jpg' %}" alt="AI and Machine Learning illustration showing neural networks and data analysis" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Embedded System Course Section -->
+        <div class="course-section">
+            <div class="row g-0">
+                <div class="col-lg-7 col-md-6">
+                    <div class="course-content h-100 d-flex flex-column justify-content-center">
+                        <h2 class="course-title">Embedded System</h2>
+                        <p class="course-description">Start your Hardware design journey with our hands on course which involves conceptualizing, designing, and creating physical components for electronic devices and systems.</p>
+                        <div>
+                            <a href="/emb/" class="btn learn-more-btn">learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6 mb-3">
+                    <div class="course-image h-100">
+                        <img src="{% static 'images/future10.jpg' %}" alt="Embedded systems with microcontrollers, circuits and electronic components" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3D Design and Printing Course Section -->
+        <div class="course-section">
+            <div class="row g-0">
+                <div class="col-lg-7 col-md-6">
+                    <div class="course-content h-100 d-flex flex-column justify-content-center">
+                        <h2 class="course-title">3D Design and Printing</h2>
+                        <p class="course-description">Gain a comprehensive understanding of 3D Designing principles, 3D Printing technologies, and practical skills to design and print custom casings for embedded systems project</p>
+                        <div>
+                            <a href="/three_d/" class="btn learn-more-btn">learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6">
+                    <div class="course-image h-100">
+                        <video width="100%" height="200" controls autoplay loop muted>
+                        <source src="{% static 'video/future19.mp4' %}" type="video/mp4">
+                    </video>
+                    </div>
+                </div>
+            </div>
+
+          
+        </div>
+          <div class="course-section">
+            <div class="row g-0">
+                <div class="col-lg-7 col-md-6">
+                    <div class="course-content h-100 d-flex flex-column justify-content-center">
+                        <h2 class="course-title">Python and Django enabled web application for content management</h2>
+                        <p class="course-description">In this program, you’ll learn how to create, manage, and publish dynamic content with a user-friendly interface. We’ll cover key concepts, from setting up your development environment to implementing advanced features, all while leveraging the powerful capabilities of Django.</p>
+                        <div>
+                            <a href="/python/" class="btn learn-more-btn">learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6">
+                    <div class="course-image h-100 mb-3">
+                        <img src="{% static 'images/future18.jpg' %}" alt="Python and Django enabled web application" />
+                    </div>
+                </div>
+            </div>
+    </div>
+   <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+ </body>
+</html>
+
+{% endblock %}

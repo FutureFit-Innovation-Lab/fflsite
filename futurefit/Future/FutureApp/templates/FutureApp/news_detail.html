@@ -1,0 +1,99 @@
+{% extends 'FutureApp/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+    <style>
+        .news-detail-wrapper {
+    width: 100%;
+    min-height: 600px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.news-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.news-image {
+    max-height: 300px;
+    width: 100%;
+    max-width: 600px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.news-content {
+    max-width: 800px;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.news-date {
+    color: #666;
+}
+
+.custom-back-btn {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid #18660E;
+    border-radius: 25px;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.custom-back-btn:hover {
+    background-color: #18660E;
+    color: #fff;
+}
+
+
+/* ✅ Responsive styles */
+@media (max-width: 768px) {
+    .news-title {
+        font-size: 1.5rem;
+    }
+
+    .news-content {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
+
+    .news-image {
+        max-height: 200px;
+    }
+}
+
+    </style>
+
+
+<div class="news-detail-wrapper">
+    <h1 class="news-title">{{ post.title }}</h1>
+
+    {% if post.cover_image %}
+        <img src="{{ post.cover_image.url }}" alt="{{ post.title }}" class="news-image">
+    {% endif %}
+
+    <p class="news-content">{{ post.content|linebreaks }}</p>
+    <p class="news-date"><small>Published: {{ post.date_published }}</small></p>
+
+     <div class="custom-spacing mt-4" >
+                <a href="{% url 'news_update' %}" class="custom-back-btn">
+                    Back to All Updates
+                </a>
+            </div>
+</div>
+<!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+{% endblock %}
+</html>

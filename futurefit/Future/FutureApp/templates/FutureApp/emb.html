@@ -1,0 +1,275 @@
+{% extends 'FutureApp/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+    <style>        
+        .content-section {
+            padding: 60px 0;
+        }
+        
+        .main-title {
+            
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 2rem;
+            
+        }
+        
+        .hero-image-placeholder {
+            
+            border: 2px dashed #dee2e6;
+            border-radius: 15px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px 0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+           
+            opacity: 0.3;
+            color: #6c757d;
+        }
+        
+        
+        .description-text {
+            
+            
+            margin-bottom: 2rem;
+        }
+        
+        .outcomes-section {
+            background: linear-gradient(145deg, #B1ECA0, #e9ecef 100%);
+            border-radius: 20px;
+            padding: 50px;
+            margin-top: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .outcomes-title {
+            
+            color: #111417;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .outcome-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .outcome-item {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            border-left: 5px solid #18660E;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+          
+        }
+        
+        .outcome-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .outcome-item::before {
+            content: '✓';
+            background: #18660E;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .apply-btn {
+            background: linear-gradient(135deg, #18660E 0%, #1c3d03 100%);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .apply-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.6);
+            color: white;
+        }
+        
+        .duration-badge {
+            background: linear-gradient(135deg, #9dfc7e 0%, #51a24b 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            display: inline-block;
+            margin-top: 1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.2rem;
+                text-align: center;
+            }
+            
+            .hero-image-placeholder {
+                height: 200px;
+                margin: 20px 0;
+            }
+            
+            .placeholder-text {
+                font-size: 1rem;
+            }
+            
+            .outcomes-section {
+                padding: 30px 20px;
+                margin-top: 30px;
+            }
+            
+            .outcomes-title {
+                font-size: 2rem;
+            }
+            
+            .outcome-item {
+                padding: 15px;
+                font-size: 1rem;
+            }
+            
+            .outcome-item:hover {
+                transform: translateX(5px);
+            }
+            
+            .content-section {
+                padding: 40px 0;
+            }
+            
+            .description-text {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .main-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-image-placeholder {
+                height: 180px;
+            }
+            
+            .outcomes-section {
+                padding: 20px 15px;
+            }
+            
+            .outcomes-title {
+                font-size: 1.8rem;
+            }
+            
+            .apply-btn {
+                padding: 12px 30px;
+                font-size: 1.1rem;
+                width: 100%;
+            }
+        }
+    </style>
+    <body>
+         <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="hero-content">
+                        <h1 class="hero-title mt-4 text-center">Embedded System</h1>
+                        <div class="duration-badge">3-months Intensive Program</div>
+                    </div>
+               <!-- Hero Image Placeholder -->
+                        <div class="hero-image-placeholder">
+                            
+                             <img src="{% static 'images/future32.jpg' %}" alt="FutureFit Innovation Lab" class="about-image img-fluid">
+                    
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h2 class=" text-center mb-4 ">Embedded Systems Deep dive</h2>
+                    
+                    <p class="description-text">
+                        Start your Hardware design journey with our hands on course which involves conceptualizing, designing, and creating physical components for electronic devices and systems.
+                        Join the 3 months Embedded systems deep dive program to learn electronic circuit schematics capture, design PCBs, and generate gerber files for manufacturing. Beyond the basics, apprentices will leverage our advanced laboratory with Oscilloscopes, multimeters, and assorted development boards. Including how to program firmwares and configure appropriate displays in production ready IoT projects.
+                    </p>
+                    
+                   
+                </div>
+            </div>
+            
+            <!-- Expected Outcomes Section -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="outcomes-section">
+                        <h3 class="outcomes-title">Expected Outcomes</h3>
+                        <p class="text-center text-muted mb-4"> By the End of Three Months:</p>
+                        
+                        <ul class="outcome-list">
+                            <li class="outcome-item">
+                                Apprentice will be proficient in basic electronics and power electronics.
+                            </li>
+                            <li class="outcome-item">
+                                Skilled in using KiCAD for schematic capture, PCB design, and generating files for manufacturing.
+                            </li>
+                            <li class="outcome-item">
+                                Knowledgeable in embedded system programming, communication protocols, and display integration.
+                            </li>
+                              <li class="outcome-item">
+                                Prepared to design, test, and build their own embedded systems projects with ESP32 or similar microcontrollers.
+                            </li>,
+                              
+                           
+                        </ul>
+                        
+                        <div class="text-center mt-4">
+                            <button class="btn apply-btn">Apply</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+
+    </body>
+</html>
+{% endblock %}
