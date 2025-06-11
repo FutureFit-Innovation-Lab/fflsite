@@ -85,6 +85,12 @@ LEVEL_OF_STUDY_CHOICES = [
     ('PhD', 'PhD'),
 ]
 
+PROGRAM_CHOICES = [
+        ('AI_ML', 'Artificial Intelligence (AI) and Machine Learning (ML) Essentials'),
+        ('EMBEDDED', 'Embedded System'),
+        ('3D_PRINT', '3D Design and Printing'),
+        ('PYTHON_DJANGO', 'Python and Django enabled web application for content management'),
+    ]
 
 
 class StudyAbroadFormSubmission(models.Model):
@@ -120,3 +126,20 @@ class GetInTouchFormSubmission(models.Model):
 
     def __str__(self):
         return f"{self.first_name} - {self.purpose}"
+
+
+
+class ProgramApplication(models.Model):
+    full_name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone = models.CharField(max_length=15)
+    program_name = models.CharField(max_length=50, choices=PROGRAM_CHOICES)
+    cover_letter = models.TextField(blank=True, null=True)
+    resume = models.FileField(upload_to='resumes/')
+    submitted_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.full_name} - {self.program_name}"
+
+
+        

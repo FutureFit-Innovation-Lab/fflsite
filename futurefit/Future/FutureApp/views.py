@@ -1,7 +1,7 @@
 # Create your views here.
 from django.shortcuts import render
-from .models import NewsUpdate,NewsletterSubscription,ContactUs, Store, StudyAbroadFormSubmission, GetInTouchFormSubmission
-from .forms import ContactUsForm,NewsletterSubscriptionForm, StudyAbroadForm, GetInTouchForm
+from .models import NewsUpdate,NewsletterSubscription,ContactUs, Store, StudyAbroadFormSubmission, GetInTouchFormSubmission, ProgramApplication
+from .forms import ContactUsForm,NewsletterSubscriptionForm, StudyAbroadForm, GetInTouchForm, ProgramApplicationForm
 from django.http import JsonResponse
 from django.contrib import messages
 from django.views.generic.edit import FormView
@@ -165,8 +165,6 @@ def add_to_cart(request, item_id):
 
 
 
-
-
 def get_in_touch_view(request):
     if request.method == 'POST':
         form = GetInTouchForm(request.POST)
@@ -176,3 +174,24 @@ def get_in_touch_view(request):
     else:
         form = GetInTouchForm()
     return render(request, 'FutureApp/get_in_touch.html', {'form': form})
+
+def apply_program(request):
+    form = ProgramApplicationForm()
+    success = False
+    show_modal = False
+
+    if request.method == 'POST':
+        form = ProgramApplicationForm(request.POST, request.FILES)
+        show_modal = True  # Always show modal on POST
+        if form.is_valid():
+            form.save()
+            success = True
+            form = ProgramApplicationForm()  # Reset the form
+            # Do not show modal after success; or keep it open if you prefer
+            show_modal = True
+
+    return render(request, 'FutureApp/program_application.html', {
+        'form': form,
+        'success': success,
+        'show_modal': show_modal
+    })

@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import contact_view
+from .views import contact_view, apply_program
 
 urlpatterns = [
     path('', views.home_view, name='home'),
@@ -23,4 +23,5 @@ urlpatterns = [
     path('emb/', views.emb, name='emb'),
     path('three_d/', views.three_d, name='three_d'),
     path('python/', views.python_page, name='python'),
+    path('apply/', apply_program, name='apply_program'),
 ]

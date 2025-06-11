@@ -1,5 +1,5 @@
 from django import forms
-from .models import NewsletterSubscription, ContactUs, StudyAbroadFormSubmission, GetInTouchFormSubmission
+from .models import NewsletterSubscription, ContactUs, StudyAbroadFormSubmission, GetInTouchFormSubmission, ProgramApplication
 
 class NewsletterSubscriptionForm(forms.ModelForm):
     class Meta:
@@ -55,3 +55,16 @@ class GetInTouchForm(forms.ModelForm):
     class Meta:
         model = GetInTouchFormSubmission
         fields = ['first_name', 'last_name', 'email', 'country_code', 'phone_number', 'purpose', 'message']
+
+class ProgramApplicationForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Add placeholder/empty label for dropdown
+        self.fields['program_name'].empty_label = "Select a program..."
+
+    class Meta:
+        model = ProgramApplication
+        fields = ['full_name', 'email', 'phone', 'program_name', 'cover_letter', 'resume']
+
+
+
