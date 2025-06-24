@@ -43,11 +43,10 @@ class StudyAbroadForm(forms.ModelForm):
                 'application/pdf',
                 'application/msword',
                 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                'image/jpeg',
-                'image/png',
+                
             ]
             if uploaded_file.content_type not in allowed_types:
-                raise forms.ValidationError("File type not supported. Allowed types: PDF, DOC, DOCX, JPG, PNG.")
+                raise forms.ValidationError("File type not supported. Allowed types: PDF, DOC, DOCX.")
         return uploaded_file
 
 
