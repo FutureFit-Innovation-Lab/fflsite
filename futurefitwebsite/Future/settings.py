@@ -78,15 +78,14 @@ WSGI_APPLICATION = 'Future.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'FutureFit',
-        'USER': 'root',
-        'PASSWORD': 'Ogugua123',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'futurefit',         
+        'USER': 'postgres',          
+        'PASSWORD': 'Victor',  
+        'HOST': '127.0.0.1',         
+        'PORT': '5432',             
     }
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
