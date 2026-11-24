@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'FutureApp',
      'widget_tweaks',
-]
+]  
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
